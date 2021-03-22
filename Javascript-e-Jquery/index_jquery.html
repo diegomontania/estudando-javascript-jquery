@@ -1,0 +1,282 @@
+<!doctype html>
+
+    <html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <!-- estilo css  -->
+        <style>
+            .normal {
+                padding: 20px;
+                font-size: 18px;
+                background-color: yellow;
+            }
+            .styling {
+                padding: 60px;
+                font-size: 22px;
+                font-weight: bold;
+                color: white;
+                background-color: black;
+                width: 200px;
+                border-radius: 60px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h2>Sintaxe JQuery</h2>
+
+        <p>
+            Além de selecionar elementos pelos nomes das tags, classes e id's, temos outras maneiras interessantes de tornar a seleção mais 
+            específica, conforme a tabela abaixo.
+        </p>
+        <div class="tableBox">
+            <table>
+                <tr>
+                    <th>Sintaxe</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td>$("*")</td>
+                    <td>Todos os elementos</td>
+                </tr>
+
+                <tr>
+                    <td>$("div.exemplo")</td>
+                    <td>Todos os elementos div que tenham a classe exemplo</td>
+                </tr>
+
+                <tr>
+                    <td>$("p:first")</td>
+                    <td>O primeiro elemento p</td>
+                </tr>
+
+                <tr>
+                    <td>$("ul li:first-child")</td>
+                    <td>O primeiro elemento li de todos os elementos ul</td>
+                </tr>
+
+                <tr>
+                    <td>$("[href]")</td>
+                    <td>Todos os elementos que tenham o atributo href</td>
+                </tr>
+
+                <tr>
+                    <td>$("a[target='_blank']")</td>
+                    <td>Todos os elementos que tenham o atributo target="_blank"</td>
+                </tr>
+
+                <tr>
+                    <td>$("a[target!='_blank']")</td>
+                    <td>Todos os elementos que NÃO tenham o atributo target="_blank"</td>
+                </tr>
+
+                <tr>
+                    <td>$(":button")</td>
+                    <td>Todos os elementos button ou inputs que tenham type="button"</td>
+                </tr>
+
+                <tr>
+                    <td>$("tr:even")</td>
+                    <td>Todos os elementos tr pares (0, 2, 4...)</td>
+                </tr>
+
+                <tr>
+                    <td>$("tr:odd")</td>
+                    <td>Todos os elementos tr ímpares (1, 3, 5...)</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <h2>Escondendo elemento HTML</h2>
+
+        <div id="esconder">Clique aqui para esconder</div>
+        <div class="exemplo">1</div>
+        <div class="exemplo">2</div>
+        <div class="exemplo">3</div>
+
+        <h2>Mudando conteudo de um elemento HTML</h2>
+
+        <div id="mudarConteudo">Clique aqui para mudar o conteudo do HTML abaixo :</div>
+        <!-- elemento usado para manipular html -->
+        <p id="paragrafo-html" style="font-size: 20px; color: green">
+            Use este <i><b>parágrafo</b></i> para testar o método html.
+        </p>
+
+        <div id="mudarConteudo">Clique aqui para mudar o conteudo do Link abaixo :</div>
+        <p>
+            Trabalhe com a url <a id="paragrafo-link" href="http://www.google.com">deste link</a>. 
+        </p>
+
+        <h2>Apagando um elemento HTML</h2>
+
+        <div id="apagaParagrafo">Clique aqui para apagar o paragrafo abaixo:</div>
+        <p id="paragrafo-a-apagar" style="font-size: 20px; color: blue">
+            Paragrafo que será apagado
+        </p>
+
+        <h2>Mudando um atributo de um elemento HTML</h2>
+
+        <!-- Imagem -->
+        <img style="width: 180px; height: auto;" src="https://static.memrise.com/img/400sqf/from/uploads/course_photos/3146044000171223183557.png" alt="js" id="imagem_js">
+        <button id="mudar_imagem" style="display: block; margin-top: 12px;">Mudar imagem</button>
+
+        <ul id="interesses">
+            <li>Desenvolvimento Front End</li>
+            <li>Desenvolvimento Back End</li>
+            <li>UX Design</li>
+            <li>Design Gráfico</li>
+        </ul>
+
+        <p style="margin-bottom: 5px">Nome:</p>
+        <input id="campo_nome" type="text" value="Diego Montania" style="margin: 0">
+
+        <h2>Pegando valores de elementos html no formulário</h2>
+
+        <h5>DropDown List</h5>
+        <form>
+            <select id="options">
+                <option value="opt1">Praia</option>
+                <option value="opt2">Montanha</option>
+                <option value="opt3">Cidade</option>
+            </select>
+        </form>
+        
+        <h5>Radio button</h5>
+        <form>
+            <span><input type="radio" name="genero" value="M" checked> Masculino</span><br>
+            <span><input type="radio" name="genero" value="F"> Feminino</span><br>
+            <span><input type="radio" name="genero" value="NONE"> Prefiro não dizer</span>         
+        </form>
+
+        <h5>CheckBoxes</h5>
+        <form>
+            <span><input type="checkbox" name="interesse" value="DFE"> Desenvolvimento Front-End</span><br>
+            <span><input type="checkbox" name="interesse" value="DBE"> Desenvolvimento Back-End</span><br>
+            <span><input type="checkbox" name="interesse" value="Design"> Design</span>
+        </form>
+
+        <h2>Manipulando classes css</h2>
+
+        <p class="normal" id="paragrafo-classes">
+            Este parágrafo tem a classe "normal". Vamos adicionar a ele a classe "styling" e ver o que acontece.
+        </p>
+
+        <button id="btn_adicionar_classe">Adicionar Classe</button>
+        <button id="btn_remover_classe">Remover Classe</button>
+        <button id="btn_alternar_classe">Alternar Classe</button>
+
+        <h2>jQuery - Eventos</h2>
+
+        <p>
+            Os eventos em JQuery, conforme mostrado na última aula, pouco diferem dos eventos Javascript, tendo apenas pequenas diferenças de nome
+            e na sintaxe. Vejamos na tabela abaixo alguns exemplos.
+        </p>
+
+        <div class="tableBox">
+            <table>
+                <tr>
+                    <th>Evento</th>
+                    <th>Descrição</th>
+                    <th>Evento em Vanilla JS</th>
+                </tr>
+                <tr>
+                    <td>click</td>
+                    <td>Clique em um elemento</td>
+                    <td>onclick</td>
+                </tr>
+                <tr>
+                    <td>dbclick</td>
+                    <td>Duplo clique em um elemento</td>
+                    <td>ondbclick</td>
+                </tr>
+                <tr>
+                    <td>mouseenter</td>
+                    <td>Cursor sobre o elemento</td>
+                    <td>onmouseover</td>
+                </tr>
+                <tr>
+                    <td>mouseleave</td>
+                    <td>Cursor deixa de estar sobre um elemento</td>
+                    <td>onmouseout</td>
+                </tr>
+                <tr>
+                    <td>keypress e keydown</td>
+                    <td>Alguma tecla é pressionada</td>
+                    <td>onkeypress e onkeydown</td>
+                </tr>
+                <tr>
+                    <td>keyup</td>
+                    <td>Alguma tecla é solta</td>
+                    <td>onkeyup</td>
+                </tr>
+                <tr>
+                    <td>change</td>
+                    <td>Alguma mudança em um campo de formulário</td>
+                    <td>onchange</td>
+                </tr>
+                <tr>
+                    <td>focus</td>
+                    <td>Algum campo de formulário é selecionado</td>
+                    <td>onfocus</td>
+                </tr>
+                <tr>
+                    <td>blur</td>
+                    <td>Saída do campo de formulário que estava selecionado</td>
+                    <td>onblur</td>
+                </tr>
+                <tr>
+                    <td>load ou ready</td>
+                    <td>A página é carregada</td>
+                    <td>onload</td>
+                </tr>
+                <tr>
+                    <td>resize</td>
+                    <td>A janela do browser é redimensionada</td>
+                    <td>onresize</td>
+                </tr>
+                <tr>
+                    <td>scroll</td>
+                    <td>A barra de rolagem é acionada (subir e descer a página)</td>
+                    <td>onscroll</td>
+                </tr>
+
+            </table>
+        </div>
+        <br>
+
+        <input id="elementoTestaEventoOn" type="text" placeholder="Nome...">
+
+        <button style="display:none" id="btn-confirmar">Confirmar</button>
+        <br>
+
+        <h2>jQuery - Efeitos</h2>
+
+        <button id="botao-esconder">Esconder sem call back e mostra texto</button>
+        <h4 style="display: none" id="texto-escondido">O botão foi escondido</h4>
+
+        <button id="botao-esconder-callback">Esconder com call back e mostra texto</button>
+        <h4 style="display: none" id="texto-escondido-callback">O botão foi escondido com callback</h4>
+
+        <h2>jQuery - Animações</h2>
+        <button id="animar">Aumentar quadrado</button>
+        <div id="quadrado" style="color:white; font-size: 18px; margin-top: 30px; width: 60px; height: 60px; background-color: black"></div>
+        
+        <div id='texto'>Meu texto!</div>
+
+        <!-- importação dos scripts javascript -->
+        <script src="js/JQuery/Iniciante/sintaxe.js"></script>
+        <script src="js/JQuery/Iniciante/manipulando-html.js"></script>
+        <script src="js/JQuery/Iniciante/each-loop.js"></script>
+        <script src="js/JQuery/Iniciante/formularios.js"></script>
+        <script src="js/JQuery/Iniciante/manipulando-classes-css.js"></script>
+        <script src="js/JQuery/Iniciante/eventos.js"></script>
+        <script src="js/JQuery/Iniciante/efeitos-e-callback.js"></script>
+        <script src="js/JQuery/Iniciante/animate.js"></script>
+    </body>
+</html>
